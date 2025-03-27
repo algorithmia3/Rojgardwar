@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RojgarDwar - Auth</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file -->
+</head>
+<body class="flex flex-col min-h-screen bg-background p-4">
+    <header class="flex flex-col items-center justify-center py-8">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4">
+            <span class="text-primary-foreground font-bold text-2xl">RD</span>
+        </div>
+        <h1 class="font-bold text-2xl text-center">RojgarDwar</h1>
+        <p class="text-muted-foreground text-center mt-2">Empowering rural communities with jobs and opportunities</p>
+    </header>
+    
+    <div class="auth-container w-full max-w-md mx-auto">
+        <div class="tabs grid grid-cols-2 mb-6">
+            <button class="tab-button active" onclick="openTab(event, 'login')">Login</button>
+            <button class="tab-button" onclick="openTab(event, 'signup')">Sign Up</button>
+        </div>
+        
+        <div id="login" class="tab-content">
+            <label for="login-phone">Phone Number</label>
+            <input type="tel" id="login-phone" placeholder="Enter your phone number">
+            
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password">
+            
+            <a href="#" class="text-primary hover:underline text-sm text-right">Forgot password?</a>
+            
+            <a href="home.html"><button class="w-full mt-2">Login</button></a>
+        </div>
+        
+        <div id="signup" class="tab-content" style="display: none;">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Enter your full name">
+            
+            <label for="signup-phone">Phone Number</label>
+            <input type="tel" id="signup-phone" placeholder="Enter your phone number">
+            
+            <label for="signup-village">Village</label>
+            <input type="text" id="signup-village" placeholder="Enter your village name">
+            
+            <label for="education">Education Level</label>
+            <select id="education">
+                <option value="">Select your education level</option>
+                <option value="primary">Primary School</option>
+                <option value="secondary">Secondary School</option>
+                <option value="highschool">High School</option>
+                <option value="graduate">Graduate</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label>Areas of Interest</label>
+            <div class="interests-grid">
+                <label><input type="checkbox"> Agriculture</label>
+                <label><input type="checkbox"> Carpentry</label>
+                <label><input type="checkbox"> Digital Skills</label>
+                <label><input type="checkbox"> Handicrafts</label>
+                <label><input type="checkbox"> Construction</label>
+                <label><input type="checkbox"> Healthcare</label>
+            </div>
+            
+            <label for="job-type">Looking for Job in</label>
+            <select id="job-type">
+                <option value="">Select job category</option>
+                <option value="agriculture">Agriculture</option>
+                <option value="construction">Construction</option>
+                <option value="handicrafts">Handicrafts</option>
+                <option value="retail">Retail</option>
+                <option value="services">Services</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="signup-password">Create Password</label>
+            <input type="password" id="signup-password" placeholder="Create a password">
+            
+            <a href="home.html"><button class="w-full mt-2">Sign Up</button></a>
+        </div>
+    </div>
+    
+    <script>
+        function openTab(evt, tabName) {
+            let tabs = document.getElementsByClassName("tab-content");
+            for (let tab of tabs) {
+                tab.style.display = "none";
+            }
+            
+            let buttons = document.getElementsByClassName("tab-button");
+            for (let btn of buttons) {
+                btn.classList.remove("active");
+            }
+            
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
