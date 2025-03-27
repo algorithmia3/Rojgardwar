@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode */
+:root {
+  --border: 0 0% 85%;
+  --input: 0 0% 90%;
+  --ring: 220 90% 60%;
+  --background: 0 0% 100%;
+  --foreground: 220 20% 20%;
+  --primary: 22 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 15% 90%;
+  --secondary-foreground: 220 15% 30%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --muted: 220 15% 95%;
+  --muted-foreground: 220 15% 40%;
+  --accent: 220 90% 60%;
+  --accent-foreground: 0 0% 100%;
+  --popover: 0 0% 98%;
+  --popover-foreground: 220 20% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 20%;
+  --radius: 0.5rem;
+}
+
+/* Dark Mode */
+.dark {
+  --background: 220 15% 10%;
+  --foreground: 0 0% 98%;
+  --primary: 22 100% 60%;
+  --secondary: 220 15% 20%;
+  --muted: 220 15% 30%;
+  --accent: 220 90% 70%;
+  --card: 220 15% 15%;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Border radius */
+.rounded-lg {
+  border-radius: var(--radius);
+}
+.rounded-md {
+  border-radius: calc(var(--radius) - 2px);
+}
+.rounded-sm {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
